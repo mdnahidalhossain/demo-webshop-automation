@@ -40,7 +40,7 @@ class RegisterPage {
     }
 
     async EnterNewPassword() {
-        await this.newPassword.fill(process.env.NEW_PASSWORD);
+        await this.newPassword.fill(process.env.PASSWORD);
     }
 
     async EnterConfirmPassword() {
