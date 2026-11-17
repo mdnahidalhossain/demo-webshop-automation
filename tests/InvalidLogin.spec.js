@@ -13,9 +13,11 @@ test('Verify Invalid Login', async ({ page }) => {
   await page.pause();
 
   //enter email & password
-  await loginPage.EnterEmail();
+  await loginPage.EnterEmail("nahid123@gmail.com");
   await page.pause();
-  await loginPage.EnterPassword();
+  await loginPage.EnterPassword("123456");
+  await page.pause();
+  await loginPage.RememberMeCheckBoxOnClick();
   await page.pause();
 
   //verify invalid login credentials
@@ -23,13 +25,3 @@ test('Verify Invalid Login', async ({ page }) => {
   await loginPage.VerifyErrorMessage();
   await page.pause();
 });
-
-// test('get started link', async ({ page }) => {
-//   await page.goto('https://playwright.dev/');
-
-//   // Click the get started link.
-//   await page.getByRole('link', { name: 'Get started' }).click();
-
-//   // Expects page to have a heading with the name of Installation.
-//   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
-// });
