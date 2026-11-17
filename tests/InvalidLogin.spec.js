@@ -23,5 +23,4 @@ test('Verify Invalid Login', async ({ page }) => {
   //verify invalid login credentials
   await loginPage.SubmitButtonOnClick()
   await loginPage.VerifyErrorMessage();
-  await page.pause();
 });
