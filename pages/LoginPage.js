@@ -14,12 +14,12 @@ class LoginPage {
         await this.loginRoute.click();
     }
 
-    async EnterEmail() {
-        await this.email.fill("nahid@gmail.com");
+    async EnterEmail(email) {
+        await this.email.fill(email);
     }
 
-    async EnterPassword() {
-        await this.password.fill("123456");
+    async EnterPassword(password) {
+        await this.password.fill(password);
     }
 
     async SubmitButtonOnClick() {
@@ -28,7 +28,6 @@ class LoginPage {
 
     async VerifyErrorMessage() {
         await expect(this.errorMessage).toBeVisible();
-        // return await this.errorMessage.innerText();
     }
 }
 
