@@ -6,6 +6,7 @@ class LoginPage {
         this.loginRoute = page.locator("//a[@class='ico-login']")
         this.email = page.locator("#Email")
         this.password = page.locator("#Password")
+        this.remeberMeCheckbox = page.locator("#RememberMe")
         this.submitButton = page.locator("//input[@class='button-1 login-button']")
         this.errorMessage = page.locator("//div[@class='validation-summary-errors']")
     }
@@ -20,6 +21,10 @@ class LoginPage {
 
     async EnterPassword(password) {
         await this.password.fill(password);
+    }
+
+    async RememberMeCheckBoxOnClick() {
+        await this.remeberMeCheckbox.click();
     }
 
     async SubmitButtonOnClick() {

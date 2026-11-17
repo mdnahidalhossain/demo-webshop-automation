@@ -17,6 +17,8 @@ test('Verify Invalid Login', async ({ page }) => {
   await page.pause();
   await loginPage.EnterPassword("123456");
   await page.pause();
+  await loginPage.RememberMeCheckBoxOnClick();
+  await page.pause();
 
   //verify invalid login credentials
   await loginPage.SubmitButtonOnClick()
