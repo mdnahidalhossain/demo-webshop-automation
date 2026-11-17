@@ -41,7 +41,7 @@ class CheckoutPage {
     }
 
     async ChooseBillingCountry(countryName) {
-        await this.billingCountry.selectOption({ label: countryName });
+        await this.billingCountry.selectOption(countryName);
     }
 
     async EnterCity(cityName) {
@@ -60,36 +60,62 @@ class CheckoutPage {
         await this.phoneNumber.fill(number);
     }
 
+    // async CompleteCheckoutSteps() {
+    //     // billing Address
+    //     if (await this.billingAddressContinueButton.isVisible()) {
+    //         await this.billingAddressContinueButton.click();
+    //     }
+
+    //     // shipping address
+    //     if (await this.shippingAddressContinueButton.isVisible()) {
+    //         await this.shippingAddressContinueButton.click();
+    //     }
+
+    //     // shipping method
+    //     if (await this.shippingMethodContinueButton.isVisible()) {
+    //         await this.shippingMethodContinueButton.click();
+    //     }
+
+    //     // payment method
+    //     if (await this.paymentMethodContinueButton.isVisible()) {
+    //         await this.paymentMethodContinueButton.click();
+    //     }
+
+    //     // payment info
+    //     if (await this.paymentInfoContinueButton.isVisible()) {
+    //         await this.paymentInfoContinueButton.click();
+    //     }
+
+    //     // confirm order
+    //     if (await this.confirmOrderButton.isVisible()) {
+    //         await this.confirmOrderButton.click();
+    //     }
+    // }
+
     async CompleteCheckoutSteps() {
-        // billing Address
-        if (await this.billingAddressContinueButton.isVisible()) {
-            await this.billingAddressContinueButton.click();
-        }
+        // Step 1: Billing address
+        await expect(this.billingAddressContinueButton).toBeVisible();
+        await this.billingAddressContinueButton.click();
 
-        // shipping address
-        if (await this.shippingAddressContinueButton.isVisible()) {
-            await this.shippingAddressContinueButton.click();
-        }
+        // Step 2: Shipping address
+        await expect(this.shippingAddressContinueButton).toBeVisible();
+        await this.shippingAddressContinueButton.click();
 
-        // shipping method
-        if (await this.shippingMethodContinueButton.isVisible()) {
-            await this.shippingMethodContinueButton.click();
-        }
+        // Step 3: Shipping method
+        await expect(this.shippingMethodContinueButton).toBeVisible();
+        await this.shippingMethodContinueButton.click();
 
-        // payment method
-        if (await this.paymentMethodContinueButton.isVisible()) {
-            await this.paymentMethodContinueButton.click();
-        }
+        // Step 4: Payment method
+        await expect(this.paymentMethodContinueButton).toBeVisible();
+        await this.paymentMethodContinueButton.click();
 
-        // payment info
-        if (await this.paymentInfoContinueButton.isVisible()) {
-            await this.paymentInfoContinueButton.click();
-        }
+        // Step 5: Payment information
+        await expect(this.paymentInfoContinueButton).toBeVisible();
+        await this.paymentInfoContinueButton.click();
 
-        // confirm order
-        if (await this.confirmOrderButton.isVisible()) {
-            await this.confirmOrderButton.click();
-        }
+        // Step 6: Confirm order
+        await expect(this.confirmOrderButton).toBeVisible();
+        await this.confirmOrderButton.click();
     }
 
     async VerifyOrderSuccessAndDetails() {

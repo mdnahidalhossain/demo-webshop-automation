@@ -8,17 +8,17 @@ test('Verify Invalid Login', async ({ page }) => {
   const loginPage = new LoginPage(page);
 
   await basePage.PageOpen();
-  await page.pause();
+  // await page.pause();
   await loginPage.LoginButtonOnClick();
-  await page.pause();
+  // await page.pause();
 
   //enter email & password
   await loginPage.EnterEmail("nahid123@gmail.com");
-  await page.pause();
+  // await page.pause();
   await loginPage.EnterPassword("123456");
-  await page.pause();
+  // await page.pause();
   await loginPage.RememberMeCheckBoxOnClick();
-  await page.pause();
+  // await page.pause();
 
   //verify invalid login credentials
   await loginPage.SubmitButtonOnClick()

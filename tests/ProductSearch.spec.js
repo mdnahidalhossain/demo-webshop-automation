@@ -15,40 +15,39 @@ test('Verify Product Search', async ({page}) => {
     await loginPage.EnterEmail(process.env.EMAIL);
     await loginPage.EnterPassword(process.env.PASSWORD);
     await loginPage.RememberMeCheckBoxOnClick();
-    await page.pause();
+    // await page.pause();
     await loginPage.SubmitButtonOnClick();
-    await page.pause();
+    // await page.pause();
 
     // search and open product
     await userHomePage.SearchProductByName("Laptop");
     // await userHomePage.SearchButtonOnClick();
     await userHomePage.VerifyAndOpenProduct();
-    await page.pause();
+    // await page.pause();
     await userHomePage.SetProductQuantity(2);
-    await page.pause();
+    // await page.pause();
 
     // add searched product to cart
     await checkoutPage.AddToCartOnClick();
     await userHomePage.ShoppingCartButtonOnClick();
     await checkoutPage.AgreeTermsOfServiceOnClick();
     await checkoutPage.CheckoutButtonOnClick();
-    await page.pause();
+    // await page.pause();
 
     // complete billing info
     await checkoutPage.ChooseBillingCountry(process.env.COUNTRY);
-    await page.pause();
+    // await page.pause();
     await checkoutPage.EnterCity(process.env.CITY);
-    await page.pause();
+    // await page.pause();
     await checkoutPage.EnterBillingAddress(process.env.ADDRESS);
-    await page.pause();
+    // await page.pause();
     await checkoutPage.EnterZipCode(process.env.ZIP);
-    await page.pause();
+    // await page.pause();
     await checkoutPage.EnterPhoneNumber(process.env.PHONE_NUMBER);
-    await page.pause();
+    // await page.pause();
     await checkoutPage.CompleteCheckoutSteps();
-    await page.pause();
+    // await page.pause();
 
     //vefify order success
     await checkoutPage.VerifyOrderSuccessAndDetails();
-    await page.pause();
 })
