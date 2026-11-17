@@ -58,7 +58,7 @@ test('Verify Register + Add Product To Cart', async ({page}) => {
     await page.pause();
     await userHomePage.AddToCardButtonOnClick();
     await page.pause();
-    await userHomePage.ShoopingCartButtonOnClick();
+    await userHomePage.ShoppingCartButtonOnClick();
     await page.pause();
 
     // verify the correct product and quantity appear in the cart
