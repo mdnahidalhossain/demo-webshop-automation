@@ -89,21 +89,28 @@ The project is now ready for test execution.
 
 ## Test Execution
 
-### Run All Tests
-
-```bash
-npx playwright test
-```
-
 ### Run Tests in Headed Mode
 
 To watch the browser while tests are executing:
 
 ```bash
-npx playwright test --headed
+npx playwright test tests/InvalidLogin.spec.js --headed
+or,
+npx playwright test tests/RegisterAndAddProduct.spec.js --headed
+or,
+npx playwright test tests/ProductSearch.spec.js --headed
 ```
 
-### Run Individual Test Cases
+##Playwright HTML Report
+
+After test execution, generate and open the HTML report:
+
+```bash
+npx playwright show-report
+```
+
+### Run Individually and Sequentially Test Cases
+## Disclaimer: In order to generate Allure report. Each test should be first run/executed individually and sequentially. If for any reason the third test "ProductSearch.spec.js" fails. Set up new unregistered user data (do not use old user data) and run the test from the begining and main the sequence. 
 
 **Q1 – Invalid Login**
 
@@ -123,33 +130,13 @@ npx playwright test tests/RegisterAndAddProduct.spec.js
 npx playwright test tests/ProductSearch.spec.js
 ```
 
-### Run Multiple Test Files Sequentially
-
-```bash
-npx playwright test tests/InvalidLogin.spec.js tests/RegisterAndAddProduct.spec.js tests/ProductSearch.spec.js --workers=1
-```
-
-## Test Reports
-
-### 1. Playwright HTML Report
-
-After test execution, generate and open the HTML report:
-
-```bash
-npx playwright show-report
-```
 
 ### 2. Allure Report
 
 The project uses `allure-playwright` to generate detailed test reports.
+After running test execution sequentially, generate Allure report.
 
 **Step 1 – Execute the tests**
-
-```bash
-npx playwright test
-```
-
-**Step 2 – Generate the Allure report**
 
 ```bash
 npx allure generate allure-results --clean -o allure-report
