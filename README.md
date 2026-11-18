@@ -110,7 +110,7 @@ npx playwright show-report
 ```
 
 
-## Run Individually and Sequentially Test Cases
+## Run Test Cases Individually and Sequentially
 ### Disclaimer: In order to generate Allure report. Each test should be first run/executed individually and sequentially. If for any reason the third test "ProductSearch.spec.js" fails. Set up new unregistered user data (do not use old user data) and run the test from the begining and main the sequence. 
 
 **Q1 – Invalid Login**
