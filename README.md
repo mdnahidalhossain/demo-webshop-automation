@@ -204,4 +204,4 @@ Source code and test implementations:
 
 **Author:** QA Automation Project  
 **Framework:** Playwright  
-**Application Under Test:** Tricentis Demo Web Shop
+**Application Under Test:** Tricentis Demo Web Shop & jsonplaceholder.typicode
