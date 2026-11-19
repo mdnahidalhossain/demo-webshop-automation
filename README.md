@@ -96,9 +96,17 @@ To watch the browser while tests are executing:
 
 ```bash
 npx playwright test tests/InvalidLogin.spec.js --headed
+```
+
 or,
+
+```bash
 npx playwright test tests/RegisterAndAddProduct.spec.js --headed
+```
+
 or,
+
+```bash
 npx playwright test tests/ProductSearch.spec.js --headed
 ```
 
