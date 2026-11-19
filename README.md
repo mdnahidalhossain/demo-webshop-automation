@@ -185,9 +185,21 @@ Automated API testing suite built with **Postman** and executed via **Newman CLI
 ## How to Run
 1. Open new Terminal
 2. Run command: cd api-tests
-3. Run command: newman run API-Automation.postman_collection.json -e User-Environment.postman_environment.json
-4. Generate 'report.html'. Run Command: newman run "API-Automation.postman_collection.json" -e "User-Environment.postman_environment.json" -r "cli,html" --reporter-html-export "E:\QA Crash Course\Ostad Course materials\Projects\Project Week 1\Postman Collections\newman-tests\report.html"
-5. Generate 'json report'. Run Command: newman run "API-Automation.postman_collection.json" -e "User-Environment.postman_environment.json" -r "cli,json"
+3. Run command:
+
+```bash
+newman run API-Automation.postman_collection.json -e User-Environment.postman_environment.json
+```
+5. Generate 'report.html'. Run Command:
+
+```bash
+newman run "API-Automation.postman_collection.json" -e "User-Environment.postman_environment.json" -r "cli,html" --reporter-html-export "E:\QA Crash Course\Ostad Course materials\Projects\Project Week 1\Postman Collections\newman-tests\report.html"
+```
+6. Generate 'json report'. Run Command: 
+
+```bash
+newman run "API-Automation.postman_collection.json" -e "User-Environment.postman_environment.json" -r "cli,json"
+```
 
 ## Check Generated Report
 1. Open project folder from local drive
